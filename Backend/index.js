@@ -19,10 +19,7 @@ import paperRouter from "./routes/paper.route.js";
 app.use("/api/v1", paperRouter);
 
 // TESTING API
-app.get("/test", (req, res, next) => {
-  res.status(200).json({ success: true, message: "API is working" });
-});
-app.get("/", (req, res) => res.send("Express on Vercel"));
+app.get("/", (req, res) => res.send("API is working"));
 
 // UNKNOWN ROUTE
 app.all("*", (req, res, next) => {
