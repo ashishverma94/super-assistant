@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import paperModel from "../models/paper.model.js";
 
 // CREATE PAPER
@@ -39,29 +40,31 @@ export const createPaper = async (req, res) => {
 };
 
 // GET PAPER
-// export const getGroup = async (req, res) => {
-//   const { id } = req.params;
+export const getPaper = async (req, res) => {
+  const { id } = req.params;
 
-//   if (!mongoose.Types.ObjectId.isValid(id)) {
-//     return res.status(400).json({ message: "Invalid group ID" });
-//   }
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(400).json({ message: "Invalid Paper ID" });
+  }
 
-//   try {
-//     const group = await groupModel.findById(id);
+  try {
+    const paper = await paperModel.findById(id);
 
-//     res.status(201).json({
-//       success: true,
-//       group,
-//     });
-//   } catch (error) {
-//     res.status(400).json({ message: error.message });
-//   }
-// };
+    res.status(201).json({
+      success: true,
+      paper,
+    });
+  } catch (error) {
+    res.status(400).json({ message: error.message || "Internal Server error" });
+  }
+};
 
 // GET ALL PAPERS
 export const getAllPapers = async (req, res) => {
   try {
-    const papers = await paperModel.find().select('title description coverImgUrl _id');
+    const papers = await paperModel
+      .find()
+      .select("title description coverImgUrl _id");
 
     res.status(200).json({
       success: true,
