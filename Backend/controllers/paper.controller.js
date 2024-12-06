@@ -12,8 +12,6 @@ export const createPaper = async (req, res) => {
     compreQues,
   } = req.body;
 
-  console.log(compreQues);
-
   if (!categorizeQues) {
     return res.status(400).json({ message: "Please add categorize ques" });
   }
