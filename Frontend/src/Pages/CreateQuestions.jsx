@@ -13,12 +13,14 @@ import React, { useState } from "react";
 import ClozeQuestions from "../components/cloze/ClozeQuestions";
 import CategoriesQuestions from "../components/categorize/CategoriesQuestions";
 import ComprehensionQuestions from "../components/comprehension/ComprehensionQuestions";
+import { useTheme } from "@emotion/react";
 
 const CreateQuestions = () => {
   const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
+  const [description, setDescription] = useState("");
   const [coverImgUrl, setCoverImgUrl] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -58,7 +60,10 @@ const CreateQuestions = () => {
       description: "",
       imgUrl: "",
       category: [""],
-      categoryItems: [{ item: "", belongsTo: "" },{ item: "", belongsTo: "" }],
+      categoryItems: [
+        { item: "", belongsTo: "" },
+        { item: "", belongsTo: "" },
+      ],
     },
   ]);
 
@@ -130,6 +135,7 @@ const CreateQuestions = () => {
 
   const submitPaperData = async () => {
     try {
+      setLoading(true);
       const response = await axios.post(
         `${BACKEND_URL}/api/v1/create-paper`,
         {
@@ -147,6 +153,8 @@ const CreateQuestions = () => {
         }
       );
 
+      setLoading(false);
+
       toast.success("Questions submitted successfully!");
       setCategorizeQues([
         {
@@ -156,7 +164,31 @@ const CreateQuestions = () => {
           categoryItems: [{ item: "", belongsTo: "" }],
         },
       ]);
+
+      setClozeQues([
+        {
+          description: "",
+          imgUrl: "",
+          sentence: "",
+          fillOptions: [],
+        },
+      ]);
+
+      setCompreQues([
+        {
+          description: "",
+          imgUrl: "",
+          passage: "",
+          mcq: [
+            {
+              question: "",
+              options: [{ answer: "", flag: false }],
+            },
+          ],
+        },
+      ]);
     } catch (error) {
+      setLoading(false);
       toast.error("Error in sending Data !");
       console.error("Error sending data:", error);
     }
@@ -311,9 +343,11 @@ const CreateQuestions = () => {
       <div className="flex justify-center">
         <button
           onClick={submitPaperData}
-          className="px-[14px] py-[7px] font-bold rounded-[10px] border-[1px] border-[black]"
+          className={`${
+            loading ? "bg-[gray] text-white cursor-not-allowed" : ""
+          } px-[14px] py-[7px] active:bg-[#3bb3e2] font-bold rounded-[10px] border-[1px] border-[black]`}
         >
-          Submit Questions
+          {loading ? "Loading..." : "Submit Questions"}
         </button>
       </div>
     </div>

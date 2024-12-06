@@ -1,6 +1,6 @@
 import paperModel from "../models/paper.model.js";
 
-// CREATE GROUP
+// CREATE PAPER
 export const createPaper = async (req, res) => {
   const {
     title,
@@ -38,7 +38,7 @@ export const createPaper = async (req, res) => {
   }
 };
 
-// GET GROUP
+// GET PAPER
 // export const getGroup = async (req, res) => {
 //   const { id } = req.params;
 
@@ -58,16 +58,16 @@ export const createPaper = async (req, res) => {
 //   }
 // };
 
-// GET ALL GROUPS
-// export const getAllGroups = async (req, res) => {
-//   try {
-//     const groups = await groupModel.find();
+// GET ALL PAPERS
+export const getAllPapers = async (req, res) => {
+  try {
+    const papers = await paperModel.find().select('title description coverImgUrl _id');
 
-//     res.status(200).json({
-//       success: true,
-//       groups,
-//     });
-//   } catch (error) {
-//     res.status(500).json({ message: "Internal Server Error" });
-//   }
-// };
+    res.status(200).json({
+      success: true,
+      papers,
+    });
+  } catch (error) {
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+};
