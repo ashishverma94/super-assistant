@@ -68,7 +68,7 @@ const CategoryItems = ({ index, catQues, setCatQues, categories }) => {
               <input
                 value={item.item}
                 onChange={(e) => handleItemChange(e, catIndex, 0)}
-                placeholder={`Category ${catIndex + 1}`}
+                placeholder={`Category Item ${catIndex + 1}`}
                 className="w-[300px] text-[18px] px-[10px] py-[3px] border-[1px] rounded-[10px] border-black"
               />
               {catQues[index].categoryItems.length > 2 && (

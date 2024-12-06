@@ -81,11 +81,12 @@ const Sentence = ({ index, clozeQues, setClozeQues }) => {
   return (
     <div className="">
       <textarea
+        placeholder="Write your sentence here"
         value={clozeQues[index].sentence}
         onChange={(e) => setSentence(e)}
         onClick={handleWordSelection}
         rows="3"
-        className="w-full p-[5px] border-[1px] border-black"
+        className="w-full py-[5px] px-[10px] border-[1px] border-black rounded-[10px]"
       ></textarea>
       <button
         className=" px-[8px] py-[4px] rounded-[10px] bg-[black] text-white text-[12px]"
@@ -112,6 +113,7 @@ const Sentence = ({ index, clozeQues, setClozeQues }) => {
             <input
               type="text"
               value={option.word}
+              placeholder={`Option ${catIndex + 1}`}
               onChange={(e) => handleWordEdit(e, catIndex)}
               className="w-[300px] min-h-[34px] text-[18px] px-[10px] py-[3px] border-[1px] rounded-[10px] border-black"
             />

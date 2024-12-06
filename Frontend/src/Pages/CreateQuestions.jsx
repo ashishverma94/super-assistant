@@ -58,7 +58,7 @@ const CreateQuestions = () => {
       description: "",
       imgUrl: "",
       category: [""],
-      categoryItems: [{ item: "", belongsTo: "" }],
+      categoryItems: [{ item: "", belongsTo: "" },{ item: "", belongsTo: "" }],
     },
   ]);
 
@@ -266,7 +266,7 @@ const CreateQuestions = () => {
       </div>
 
       {/* CLOZE QUESTIONS  */}
-      {/* <div className="w-full h-full bg-[#000000] text-white text-[25px] font-bold px-[20px] py-[12px] rounded-[20px] shadow-md">
+      <div className="w-full h-full bg-[#000000] text-white text-[25px] font-bold px-[20px] py-[12px] rounded-[20px] shadow-md">
         Create Cloze Questions
       </div>
       {clozeQues.map((item, index) => (
@@ -284,10 +284,10 @@ const CreateQuestions = () => {
         >
           Add New Question
         </button>
-      </div> */}
+      </div>
 
       {/* COMPREHENSION QUESTIONS  */}
-      {/* <div className="w-full h-full bg-[#000000] text-white text-[25px] font-bold px-[20px] py-[12px] rounded-[20px] shadow-md">
+      <div className="w-full h-full bg-[#000000] text-white text-[25px] font-bold px-[20px] py-[12px] rounded-[20px] shadow-md">
         Create Comprehension Questions
       </div>
       {compreQues.map((item, index) => (
@@ -305,7 +305,7 @@ const CreateQuestions = () => {
         >
           Add New Question
         </button>
-      </div> */}
+      </div>
 
       {/* SUBMIT BUTTON  */}
       <div className="flex justify-center">
