@@ -1,4 +1,4 @@
-import HomePage from "./pages/homepage";
+import HomePage from "./pages/homepage.jsx";
 // import QuestionsPage from "./pages/QuestionsPage";
 // import CreateQuestions from "./pages/CreateQuestions";
 // import QuestionsListPage from "./pages/QuestionsListPage";
