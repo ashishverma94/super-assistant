@@ -1,9 +1,7 @@
-import {
-  HomePage,
-  QuestionsPage,
-  CreateQuestions,
-  QuestionsListPage,
-} from "./pages/index";
+import HomePage from "./pages/HomePage";
+import QuestionsPage from "./pages/QuestionsPage";
+import CreateQuestions from "./pages/CreateQuestions";
+import QuestionsListPage from "./pages/QuestionsListPage";
 import { ToastContainer } from "react-toastify";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
