@@ -77,7 +77,7 @@ const QuesHeader = ({ index, catQues, setCatQues }) => {
         value={catQues[index].description}
         onChange={(e) => setDescription(e)}
         rows="1"
-        className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="w-full p-3 border-2 border-gray-300 rounded-lg"
         placeholder="Enter description of Question Here"
       />
       <div className="w-full h-[100px] flex flex-row border-2 border-gray-300 rounded-lg justify-center items-center px-[10px]">

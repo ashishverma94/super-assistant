@@ -1,9 +1,17 @@
-import mongoose from "mongoose";
 import paperModel from "../models/paper.model.js";
 
 // CREATE GROUP
 export const createPaper = async (req, res) => {
-  const { categorizeQues } = req.body;
+  const {
+    title,
+    description,
+    coverImgUrl,
+    categorizeQues,
+    clozeQues,
+    compreQues,
+  } = req.body;
+
+  console.log(compreQues);
 
   if (!categorizeQues) {
     return res.status(400).json({ message: "Please add categorize ques" });
@@ -11,7 +19,12 @@ export const createPaper = async (req, res) => {
 
   try {
     const newPaper = {
+      title,
+      description,
+      coverImgUrl,
       categorizeQues,
+      clozeQues,
+      compreQues,
     };
 
     const paper = await paperModel.create(newPaper);
