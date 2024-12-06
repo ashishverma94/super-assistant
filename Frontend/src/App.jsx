@@ -1,4 +1,5 @@
-import HomePage from "./pages/homepage.jsx";
+import React from "react";
+import HomePage from "./pages/HomePage";
 // import QuestionsPage from "./pages/QuestionsPage";
 // import CreateQuestions from "./pages/CreateQuestions";
 // import QuestionsListPage from "./pages/QuestionsListPage";
