@@ -16,7 +16,8 @@ app.use(cors());
 
 // ROUTES
 import paperRouter from "./routes/paper.route.js";
-app.use("/api/v1", paperRouter);
+import answerRouter from "./routes/answer.route.js";
+app.use("/api/v1", paperRouter, answerRouter);
 
 // TESTING API
 app.get("/", (req, res) => res.send("API is working"));

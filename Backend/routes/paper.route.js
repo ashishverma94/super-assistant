@@ -5,10 +5,10 @@ import {
   getAllPapers,
 } from "../controllers/paper.controller.js";
 
-const groupRouter = express.Router();
+const paperRouter = express.Router();
 
-groupRouter.get("/get-paper", getAllPapers);
-groupRouter.post("/create-paper", createPaper);
-groupRouter.get("/get-paper/:id", getPaper);
+paperRouter.get("/get-paper", getAllPapers);
+paperRouter.post("/create-paper", createPaper);
+paperRouter.get("/get-paper/:id", getPaper);
 
-export default groupRouter;
+export default paperRouter;
