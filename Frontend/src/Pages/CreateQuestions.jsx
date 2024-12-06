@@ -13,7 +13,6 @@ import React, { useState } from "react";
 import ClozeQuestions from "../components/cloze/ClozeQuestions";
 import CategoriesQuestions from "../components/categorize/CategoriesQuestions";
 import ComprehensionQuestions from "../components/comprehension/ComprehensionQuestions";
-import { useTheme } from "@emotion/react";
 
 const CreateQuestions = () => {
   const [title, setTitle] = useState("");
