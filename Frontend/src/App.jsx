@@ -1,7 +1,7 @@
-import HomePage from "./pages/HomePage.jsx";
-import QuestionsPage from "./pages/QuestionsPage";
+// import HomePage from "./pages/HomePage.jsx";
+// import QuestionsPage from "./pages/QuestionsPage";
 import CreateQuestions from "./pages/CreateQuestions";
-import QuestionsListPage from "./pages/QuestionsListPage";
+// import QuestionsListPage from "./pages/QuestionsListPage";
 import { ToastContainer } from "react-toastify";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -12,10 +12,10 @@ function App() {
     <div>
       <Router>
         <Routes>
-          <Route index element={<HomePage />} />
+          {/* <Route index element={<HomePage />} /> */}
           <Route path="/create-questions" element={<CreateQuestions />} />
-          <Route path="/solve-questions" element={<QuestionsListPage />} />
-          <Route path="/solve-questions/:id" element={<QuestionsPage />} />
+          {/* <Route path="/solve-questions" element={<QuestionsListPage />} /> */}
+          {/* <Route path="/solve-questions/:id" element={<QuestionsPage />} /> */}
 
           <Route
             path="*"
