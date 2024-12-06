@@ -3,7 +3,7 @@ import {
   QuestionsPage,
   CreateQuestions,
   QuestionsListPage,
-} from "./pages";
+} from "./pages/index";
 import { ToastContainer } from "react-toastify";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
