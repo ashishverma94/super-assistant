@@ -13,6 +13,7 @@ const QuestionsListPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setLoading(true)
         const response = await axios.get(`${BACKEND_URL}/api/v1/get-paper`);
         setData(response.data?.papers);
         setLoading(false);
